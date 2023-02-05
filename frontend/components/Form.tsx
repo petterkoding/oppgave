@@ -36,7 +36,7 @@ const Form = ({selectOptions}:FormProps) => {
 
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-200 py-5 px-2 w-[400px] mt-12">
+    <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-200 py-5 px-2 w-[400px] my-12">
 
         <div className="flex flex-col mb-4">
 

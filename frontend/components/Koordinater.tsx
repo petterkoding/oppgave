@@ -1,5 +1,4 @@
 import React,{useState, useEffect, ReactElement} from 'react'
-import FeilMelding from './FeilMelding'
 
 type KProps = {
   koordinater: string | null | undefined
