@@ -3,16 +3,14 @@ import Form from './Form'
 import List from './List'
 
 const Main = () => {
-    const {data, loading, errors} : ResponseData= useFetch("http://localhost:5000/produksjonsplass")
+    const {data, loading} : ResponseData= useFetch("http://localhost:5000/produksjonsplass")
 
-    console.log(data)
-
-    if(loading) return <p>Loading...</p>
 
   return (
     <div>
-        <List list={data}/>
-        <Form selectOptions={data}/>
+      {loading ? <p>...loading</p> : <List list={data}/>}
+      
+      <Form selectOptions={data}/>
     </div>
   )
 }

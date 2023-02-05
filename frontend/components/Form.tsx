@@ -15,8 +15,6 @@ const Form = ({selectOptions}:FormProps) => {
     const {register, handleSubmit, formState:{errors}} = useForm<Forflytning>()
 
     async function onSubmit(data : Forflytning){
-     
-        console.log("LOGDATA >>> FORM", data)
       
         const options  = {
             body: JSON.stringify(data),
@@ -28,8 +26,8 @@ const Form = ({selectOptions}:FormProps) => {
         }
     
         try{  
-            const results = await fetch("http://localhost:5000/registrerforflytning", options)
-            console.log("res", results)
+            const response = await fetch("http://localhost:5000/registrerforflytning", options)
+            console.log("response", response)
         }catch(err){
             console.log("ERROR >>>",err)
         } 
@@ -46,10 +44,9 @@ const Form = ({selectOptions}:FormProps) => {
             <select
                 {...register("dyreholdId", {required: true})}
                 name="dyreholdId" id="dyreholdId"
-                className="bg-white border border-black p-1"
-                defaultValue="1">
+                className="bg-white border border-black p-1">
 
-                <option disabled selected>vennligst velg</option>
+                <option disabled>vennligst velg</option>
                 <option value="griser">griser</option>
                 <option value="kuer">kuer</option>
                 <option value="høner">høner</option>
@@ -63,7 +60,8 @@ const Form = ({selectOptions}:FormProps) => {
 
             <label htmlFor="individ">Individ:</label>
             <input
-            {...register("individ", {required: true, valueAsNumber: true})}
+            {...register("individ", {required: true, valueAsNumber: true, min: 10})}
+            placeholder="Individ nummer"
             type="number" id="individ"
             className="bg-white border border-black p-1"/>
             {errors.individ && <span className="text-xs text-red-500 first-letter:capitalize">Individ må være et nummer *påkrevd</span>}
