@@ -14,9 +14,6 @@ type Koordinater ={
     type: string;
 }
 
-
-
-
 interface Produksjonsplass extends Base {
     bruksnummer: number;
     bygningsnummer: number;
@@ -24,13 +21,6 @@ interface Produksjonsplass extends Base {
     kommunenummer: string;
     koordinater: string | ReactNode | null ;
     koordinatsystem: string | null;
-}
-
-
-type ResponseData = {
-    data: ProduksjonsplassInfo[]
-    loading: boolean,
-    errors?: object,
 }
 
 

@@ -6,7 +6,7 @@ type Error = {
 
 const FeilMelding = ({errorMessage}: Error) : ReactElement => {
   return (
-    <p className="text-xs text-red-600 first-letter:uppercase px-2 py-1 border-[1px] border-red-600 inline">{errorMessage}</p>
+    <p className="text-xs text-red-600 first-letter:uppercase ml-2 border-b-[1px] border-red-600 inline">{errorMessage}</p>
   )
 }
 
