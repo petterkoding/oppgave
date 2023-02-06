@@ -60,7 +60,7 @@ const Form = ({selectOptions}:FormProps) => {
 
             <label htmlFor="individ">Individ:</label>
             <input
-            {...register("individ", {required: true, valueAsNumber: true, min: 10})}
+            {...register("individ", {required: true, valueAsNumber: true, min: 1})}
             placeholder="Individ nummer"
             type="number" id="individ"
             className="bg-white border border-black p-1"/>
